@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NewFriend @add-contact="parentEmitaddcontact"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NewFriend from '@/components/NewFriend.vue'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  components: {NewFriend },
+  methods:
+  {
+    parentEmitaddcontact(name,phone,email)
+    {
+      console.log('name',name);
+      console.log('phone',phone);
+      console.log('email',email);
+    }
   }
 }
 </script>
